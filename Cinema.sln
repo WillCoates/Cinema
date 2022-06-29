@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movies", "Movies", "{59DA5FCE-48A7-4F55-911D-0F62DB573B69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8432936B-2D4D-4897-899B-185D30975E36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B914290B-A339-4563-BC77-7B2C9BA9C877}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema.Movies.Domain", "Movies\src\Cinema.Movies.Domain\Cinema.Movies.Domain.csproj", "{C7D2BB72-AA42-4C13-91AE-08B7BC59A70E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema.Movies.Domain.Tests.Unit", "Movies\tests\Cinema.Movies.Domain.Tests.Unit\Cinema.Movies.Domain.Tests.Unit.csproj", "{BFCB74CF-2A8C-46DE-A510-D593CFC486E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8432936B-2D4D-4897-899B-185D30975E36} = {59DA5FCE-48A7-4F55-911D-0F62DB573B69}
+		{B914290B-A339-4563-BC77-7B2C9BA9C877} = {59DA5FCE-48A7-4F55-911D-0F62DB573B69}
+		{C7D2BB72-AA42-4C13-91AE-08B7BC59A70E} = {8432936B-2D4D-4897-899B-185D30975E36}
+		{BFCB74CF-2A8C-46DE-A510-D593CFC486E9} = {B914290B-A339-4563-BC77-7B2C9BA9C877}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7D2BB72-AA42-4C13-91AE-08B7BC59A70E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7D2BB72-AA42-4C13-91AE-08B7BC59A70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7D2BB72-AA42-4C13-91AE-08B7BC59A70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7D2BB72-AA42-4C13-91AE-08B7BC59A70E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFCB74CF-2A8C-46DE-A510-D593CFC486E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFCB74CF-2A8C-46DE-A510-D593CFC486E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFCB74CF-2A8C-46DE-A510-D593CFC486E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFCB74CF-2A8C-46DE-A510-D593CFC486E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
