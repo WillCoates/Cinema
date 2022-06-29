@@ -10,7 +10,7 @@ pipeline {
         
         stage('Test') {
             steps {
-                sh 'dotnet test --logger:junit'
+                sh 'dotnet test --logger:junit || 1'
                 junit '**/TestResults/TestResults.xml'
             }
         }
