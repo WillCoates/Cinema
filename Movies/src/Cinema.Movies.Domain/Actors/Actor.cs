@@ -10,6 +10,17 @@ public class Actor
         
         _events.Add(new ActorCreated(id, name, dateOfBirth));
     }
+
+    public Actor(ActorMemento memento)
+    {
+        ArgumentNullException.ThrowIfNull(memento.Name);
+        
+        Id = new ActorId(memento.Id);
+        Name = memento.Name!;
+        _alternateNames = new List<Name>(memento.AlternateNames);
+        DateOfBirth = memento.DateOfBirth;
+        DateOfDeath = memento.DateOfDeath;
+    }
     
     public ActorId Id { get; }
     public Name Name { get; private set; }
@@ -46,5 +57,19 @@ public class Actor
         DateOfDeath = dateOfDeath;
         
         _events.Add(new ActorDied(Id, dateOfDeath));
+    }
+
+    public ActorMemento GetMemento()
+    {
+        var memento = new ActorMemento
+        {
+            Id = Id.Id,
+            Name = Name,
+            DateOfBirth = DateOfBirth,
+            DateOfDeath = DateOfDeath,
+            AlternateNames = new List<Name>(AlternateNames), // Ensure nobody can change this by copying to new list 
+        };
+
+        return memento;
     }
 }
