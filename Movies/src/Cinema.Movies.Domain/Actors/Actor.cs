@@ -19,6 +19,8 @@ public class Actor
     public IReadOnlyList<ActorEvent> Events => _events.AsReadOnly();
 
     public DateOnly DateOfBirth { get; }
+    
+    public DateOnly? DateOfDeath { get; private set; }
 
     public void ChangeName(Name newName)
     {
@@ -30,5 +32,17 @@ public class Actor
         Name = newName;
         
         _events.Add(new ActorNameChanged(Id, newName));
+    }
+
+    public void Died(DateOnly dateOfDeath)
+    {
+        if (DateOfDeath != null)
+        {
+            throw new ActorAlreadyDeadException("Actor already died");
+        }
+        
+        DateOfDeath = dateOfDeath;
+        
+        _events.Add(new ActorDied(Id, dateOfDeath));
     }
 }

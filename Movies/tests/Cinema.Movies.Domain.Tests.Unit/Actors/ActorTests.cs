@@ -50,4 +50,35 @@ public class ActorTests
 
         _sut.Events.Should().Contain(new ActorNameChanged(ActorId.Empty, newName));
     }
+
+    [Fact]
+    public void Died_ShouldSetDateOfDeath_WhenDateIsProvided()
+    {
+        var dateOfDeath = new DateOnly(2022, 05, 01);
+
+        _sut.Died(dateOfDeath);
+
+        _sut.DateOfDeath.Should().Be(dateOfDeath);
+    }
+
+    [Fact]
+    public void Died_ShouldThrowException_WhenActorAlreadyDead()
+    {
+        var dateOfDeath = new DateOnly(2022, 05, 01);
+        _sut.Died(dateOfDeath);
+        
+        var action = () => _sut.Died(dateOfDeath);
+
+        action.Should().Throw<ActorAlreadyDeadException>().WithMessage("*Actor already died*");
+    }
+
+    [Fact]
+    public void Died_ShouldEmitActorDiedEvent_WhenDateIsProvided()
+    {
+        var dateOfDeath = new DateOnly(2022, 05, 01);
+        
+        _sut.Died(dateOfDeath);
+
+        _sut.Events.Should().Contain(new ActorDied(ActorId.Empty, dateOfDeath));
+    }
 }
