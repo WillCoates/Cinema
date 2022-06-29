@@ -13,3 +13,9 @@ public record ActorDied(
     ActorId ActorId,
     DateOnly DateOfDeath
 ): ActorEvent(ActorId);
+
+public record ActorCreated(
+    ActorId ActorId,
+    Name Name,
+    DateOnly DateOfBirth
+): ActorEvent(ActorId);

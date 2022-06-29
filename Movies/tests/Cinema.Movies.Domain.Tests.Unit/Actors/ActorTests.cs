@@ -81,4 +81,11 @@ public class ActorTests
 
         _sut.Events.Should().Contain(new ActorDied(ActorId.Empty, dateOfDeath));
     }
+
+    [Fact]
+    public void Ctor_ShouldEmitACtorCreatedEvent_WhenInvoked()
+    {
+        _sut.Events.Should()
+            .Contain(new ActorCreated(ActorId.Empty, new Name("John", null, "Doe"), new DateOnly(1998, 11, 10)));
+    }
 }

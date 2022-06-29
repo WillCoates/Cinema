@@ -7,6 +7,8 @@ public class Actor
         Id = id;
         Name = name;
         DateOfBirth = dateOfBirth;
+        
+        _events.Add(new ActorCreated(id, name, dateOfBirth));
     }
     
     public ActorId Id { get; }
