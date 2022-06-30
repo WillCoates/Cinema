@@ -10,6 +10,6 @@ public class ActorDto
     public string Surname { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
     public List<string> AlternateNames { get; set; } = new();
-    public DateOnly DateOfBirth { get; set; }
-    public DateOnly? DateOfDeath { get; set; }
+    public DateTime DateOfBirth { get; set; }
+    public DateTime? DateOfDeath { get; set; }
 }

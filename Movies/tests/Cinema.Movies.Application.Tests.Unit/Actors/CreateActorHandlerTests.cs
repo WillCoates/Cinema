@@ -20,7 +20,7 @@ public class CreateActorHandlerTests
     public async Task CreateActor_ShouldCreateNewActor_WithValidCommand()
     {
         var request = new CreateActor(
-            "Stephen", "John", "Fry", new DateOnly(1957, 8, 24)
+            "Stephen", "John", "Fry", new DateTime(1957, 8, 24)
         );
         var actorId = new ActorId(Guid.NewGuid());
         _actorRepository.Setup(x => x.NewId().Result)
@@ -33,7 +33,7 @@ public class CreateActorHandlerTests
                 It.Is<Actor>(
                     actor => actor.Id == actorId
                         && actor.Name == new Name("Stephen", "John", "Fry")
-                        && actor.DateOfBirth == new DateOnly(1957, 8, 24)
+                        && actor.DateOfBirth == new DateTime(1957, 8, 24)
                 )
             )
         );

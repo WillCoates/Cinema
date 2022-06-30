@@ -25,10 +25,10 @@ public class RegisterActorDeathHandlerTests
         {
             Id = actorId.Id,
             Name = new Name("Bill", null, "Maynard"),
-            DateOfBirth = new DateOnly(1928, 10, 8)
+            DateOfBirth = new DateTime(1928, 10, 8)
         });
 
-        var request = new RegisterActorDeath(actorId, new DateOnly(2018, 03, 30));
+        var request = new RegisterActorDeath(actorId, new DateTime(2018, 03, 30));
         
         _actorRepository.Setup(x => x.Read(actorId).Result)
             .Returns(actor);
@@ -37,7 +37,7 @@ public class RegisterActorDeathHandlerTests
         
         _actorRepository.Verify(x => x.Update(actor));
 
-        actor.DateOfDeath.Should().Be(new DateOnly(2018, 03, 30));
+        actor.DateOfDeath.Should().Be(new DateTime(2018, 03, 30));
     }
 
     [Fact]
@@ -45,7 +45,7 @@ public class RegisterActorDeathHandlerTests
     {
         var actorId = new ActorId(Guid.NewGuid());
         
-        var request = new RegisterActorDeath(actorId, new DateOnly(2018, 03, 30));
+        var request = new RegisterActorDeath(actorId, new DateTime(2018, 03, 30));
 
         _actorRepository.Setup(x => x.Read(actorId).Result)
             .Returns(() => null);

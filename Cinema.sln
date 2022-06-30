@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema.Movies.Application",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema.Movies.Application.Tests.Unit", "Movies\tests\Cinema.Movies.Application.Tests.Unit\Cinema.Movies.Application.Tests.Unit.csproj", "{F7DCD467-2193-4387-851D-A6D4C25BCF54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema.Movies.Infrastructure", "Movies\src\Cinema.Movies.Infrastructure\Cinema.Movies.Infrastructure.csproj", "{C9DE27BF-2BFB-4324-B119-43904F6BE6E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema.Movies.WebAPI", "Movies\src\Cinema.Movies.WebAPI\Cinema.Movies.WebAPI.csproj", "{A9B88BDD-566D-4CB0-8D02-DDA9F2159C4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,8 @@ Global
 		{BFCB74CF-2A8C-46DE-A510-D593CFC486E9} = {B914290B-A339-4563-BC77-7B2C9BA9C877}
 		{9443C345-0E3E-4E63-AF5D-ECB6020A58CB} = {8432936B-2D4D-4897-899B-185D30975E36}
 		{F7DCD467-2193-4387-851D-A6D4C25BCF54} = {B914290B-A339-4563-BC77-7B2C9BA9C877}
+		{C9DE27BF-2BFB-4324-B119-43904F6BE6E2} = {8432936B-2D4D-4897-899B-185D30975E36}
+		{A9B88BDD-566D-4CB0-8D02-DDA9F2159C4B} = {8432936B-2D4D-4897-899B-185D30975E36}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C7D2BB72-AA42-4C13-91AE-08B7BC59A70E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +50,13 @@ Global
 		{F7DCD467-2193-4387-851D-A6D4C25BCF54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7DCD467-2193-4387-851D-A6D4C25BCF54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7DCD467-2193-4387-851D-A6D4C25BCF54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9DE27BF-2BFB-4324-B119-43904F6BE6E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9DE27BF-2BFB-4324-B119-43904F6BE6E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9DE27BF-2BFB-4324-B119-43904F6BE6E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9DE27BF-2BFB-4324-B119-43904F6BE6E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9B88BDD-566D-4CB0-8D02-DDA9F2159C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9B88BDD-566D-4CB0-8D02-DDA9F2159C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9B88BDD-566D-4CB0-8D02-DDA9F2159C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9B88BDD-566D-4CB0-8D02-DDA9F2159C4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

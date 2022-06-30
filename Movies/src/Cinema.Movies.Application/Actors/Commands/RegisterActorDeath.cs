@@ -5,5 +5,5 @@ namespace Cinema.Movies.Application.Actors.Commands;
 
 public record RegisterActorDeath(
     ActorId ActorId,
-    DateOnly DateOfDeath
+    DateTime DateOfDeath
 ): IRequest;

@@ -25,7 +25,7 @@ public class ChangeActorNameHandlerTests
         {
             Id = actorId.Id,
             Name = new Name("Bill", null, "Maynard"),
-            DateOfBirth = new DateOnly(1928, 10, 8)
+            DateOfBirth = new DateTime(1928, 10, 8)
         });
 
         var request = new ChangeActorName(actorId, "Walter", "Frederick George", "Williams");

@@ -11,11 +11,11 @@ public record ActorNameChanged(
 
 public record ActorDied(
     ActorId ActorId,
-    DateOnly DateOfDeath
+    DateTime DateOfDeath
 ): ActorEvent(ActorId);
 
 public record ActorCreated(
     ActorId ActorId,
     Name Name,
-    DateOnly DateOfBirth
+    DateTime DateOfBirth
 ): ActorEvent(ActorId);

@@ -6,7 +6,7 @@ public record ActorReadDto(
     ActorId Id,
     Name Name,
     List<Name> AlternativeNames,
-    DateOnly DateOfBirth,
-    DateOnly? DateOfDeath
+    DateTime DateOfBirth,
+    DateTime? DateOfDeath
 );
     

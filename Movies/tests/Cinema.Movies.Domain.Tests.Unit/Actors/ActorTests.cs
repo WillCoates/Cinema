@@ -6,7 +6,7 @@ namespace Cinema.Movies.Domain.Tests.Unit.Actors;
 
 public class ActorTests
 {
-    private Actor _sut = new(ActorId.Empty, new Name("John", null, "Doe"), new DateOnly(1998, 11, 10));
+    private Actor _sut = new(ActorId.Empty, new Name("John", null, "Doe"), new DateTime(1998, 11, 10));
     
     [Fact]
     public void ChangeName_ShouldChangeName_WhenNameIsProvided()
@@ -55,7 +55,7 @@ public class ActorTests
     [Fact]
     public void RegisterDead_ShouldSetDateOfDeath_WhenDateIsProvided()
     {
-        var dateOfDeath = new DateOnly(2022, 05, 01);
+        var dateOfDeath = new DateTime(2022, 05, 01);
 
         _sut.RegisterDead(dateOfDeath);
 
@@ -65,7 +65,7 @@ public class ActorTests
     [Fact]
     public void RegisterDead_ShouldThrowException_WhenActorAlreadyDead()
     {
-        var dateOfDeath = new DateOnly(2022, 05, 01);
+        var dateOfDeath = new DateTime(2022, 05, 01);
         _sut.RegisterDead(dateOfDeath);
         
         var action = () => _sut.RegisterDead(dateOfDeath);
@@ -76,7 +76,7 @@ public class ActorTests
     [Fact]
     public void RegisterDead_ShouldEmitActorDiedEvent_WhenDateIsProvided()
     {
-        var dateOfDeath = new DateOnly(2022, 05, 01);
+        var dateOfDeath = new DateTime(2022, 05, 01);
         
         _sut.RegisterDead(dateOfDeath);
 
@@ -87,14 +87,14 @@ public class ActorTests
     public void Ctor_ShouldEmitACtorCreatedEvent_WhenPassedValues()
     {
         _sut.Events.Should()
-            .Contain(new ActorCreated(ActorId.Empty, new Name("John", null, "Doe"), new DateOnly(1998, 11, 10)));
+            .Contain(new ActorCreated(ActorId.Empty, new Name("John", null, "Doe"), new DateTime(1998, 11, 10)));
     }
 
     [Fact]
     public void GetMemento_ShouldSetIdInMemento_WhenInvoked()
     {
         var guid = Guid.NewGuid();
-        var sut = new Actor(new ActorId(guid), new Name("John", null, "Doe"), new DateOnly(1998, 11, 10));
+        var sut = new Actor(new ActorId(guid), new Name("John", null, "Doe"), new DateTime(1998, 11, 10));
         
         var memento = sut.GetMemento();
 
@@ -114,7 +114,7 @@ public class ActorTests
     {
         var memento = _sut.GetMemento();
 
-        memento.DateOfBirth.Should().Be(new DateOnly(1998, 11, 10));
+        memento.DateOfBirth.Should().Be(new DateTime(1998, 11, 10));
     }
 
     [Fact]
@@ -128,7 +128,7 @@ public class ActorTests
     [Fact]
     public void GetMemento_ShouldSetDateOfDeath_WhenActorIsDead()
     {
-        var dateOfDeath = new DateOnly(2022, 10, 05);
+        var dateOfDeath = new DateTime(2022, 10, 05);
         _sut.RegisterDead(dateOfDeath);
         
         var memento = _sut.GetMemento();
@@ -154,8 +154,8 @@ public class ActorTests
         {
             Id = guid,
             Name = new Name("Hugh", null, "Laurie"),
-            DateOfBirth = new DateOnly(1959, 6, 11),
-            DateOfDeath = new DateOnly(2043, 10, 02),
+            DateOfBirth = new DateTime(1959, 6, 11),
+            DateOfDeath = new DateTime(2043, 10, 02),
             AlternateNames = new List<Name>(new [] { new Name("James", "Hugh Calum", "Laurie")})
         };
 
@@ -176,8 +176,8 @@ public class ActorTests
         {
             Id = guid,
             Name = null,
-            DateOfBirth = new DateOnly(1959, 6, 11),
-            DateOfDeath = new DateOnly(2043, 10, 02),
+            DateOfBirth = new DateTime(1959, 6, 11),
+            DateOfDeath = new DateTime(2043, 10, 02),
             AlternateNames = new List<Name>(new [] { new Name("James", "Hugh Calum", "Laurie")})
         };
 

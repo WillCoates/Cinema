@@ -5,6 +5,6 @@ public class ActorMemento
     public Guid Id { get; set; }
     public Name? Name { get; set; }
     public List<Name> AlternateNames { get; set; } = new();
-    public DateOnly DateOfBirth { get; set; }
-    public DateOnly? DateOfDeath { get; set; }
+    public DateTime DateOfBirth { get; set; }
+    public DateTime? DateOfDeath { get; set; }
 }

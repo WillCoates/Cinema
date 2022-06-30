@@ -1,0 +1,11 @@
+services:
+  # This isn't a real service, only used to build other services
+  cinema-base:
+    build: .
+    image: cinema-base
+  movies-db:
+    image: mongo:5.0
+  movies:
+    build: ./Movies
+    ports:
+      - 8080:8080

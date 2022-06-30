@@ -2,7 +2,7 @@ namespace Cinema.Movies.Domain.Actors;
 
 public class Actor
 {
-    public Actor(ActorId id, Name name, DateOnly dateOfBirth)
+    public Actor(ActorId id, Name name, DateTime dateOfBirth)
     {
         Id = id;
         Name = name;
@@ -31,9 +31,9 @@ public class Actor
     private List<ActorEvent> _events = new();
     public IReadOnlyList<ActorEvent> Events => _events.AsReadOnly();
 
-    public DateOnly DateOfBirth { get; }
+    public DateTime DateOfBirth { get; }
     
-    public DateOnly? DateOfDeath { get; private set; }
+    public DateTime? DateOfDeath { get; private set; }
 
     public void ChangeName(Name newName)
     {
@@ -47,7 +47,7 @@ public class Actor
         _events.Add(new ActorNameChanged(Id, newName));
     }
 
-    public void RegisterDead(DateOnly dateOfDeath)
+    public void RegisterDead(DateTime dateOfDeath)
     {
         if (DateOfDeath != null)
         {

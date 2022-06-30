@@ -26,7 +26,7 @@ public class GetActorByIdTests
             actorId,
             new Name("John", null, "Doe"),
             new List<Name>(new [] { new Name("John", "Smith", "Doe")}),
-            new DateOnly(1970, 01, 01),
+            new DateTime(1970, 01, 01),
             null
         );
 
@@ -45,7 +45,7 @@ public class GetActorByIdTests
         actorDto.Surname.Should().Be("Doe");
         actorDto.Name.Should().Be("John Doe");
         actorDto.AlternateNames.Should().Equal("John Smith Doe");
-        actorDto.DateOfBirth.Should().Be(new DateOnly(1970, 01, 01));
+        actorDto.DateOfBirth.Should().Be(new DateTime(1970, 01, 01));
         actorDto.DateOfDeath.Should().BeNull();
     }
 }
