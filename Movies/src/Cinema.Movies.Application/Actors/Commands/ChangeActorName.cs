@@ -4,7 +4,7 @@ using MediatR;
 namespace Cinema.Movies.Application.Actors.Commands;
 
 public record ChangeActorName(
-    ActorId Id,
+    ActorId ActorId,
     string Forename,
     string? MiddleNames,
     string Surname

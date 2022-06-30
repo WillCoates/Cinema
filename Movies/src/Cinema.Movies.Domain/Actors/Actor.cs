@@ -47,7 +47,7 @@ public class Actor
         _events.Add(new ActorNameChanged(Id, newName));
     }
 
-    public void Died(DateOnly dateOfDeath)
+    public void RegisterDead(DateOnly dateOfDeath)
     {
         if (DateOfDeath != null)
         {

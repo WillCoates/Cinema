@@ -14,11 +14,11 @@ public class ChangeActorNameHandler: IRequestHandler<ChangeActorName>
 
     public async Task<Unit> Handle(ChangeActorName request, CancellationToken cancellationToken)
     {
-        Actor? actor = await _actorRepository.Read(request.Id);
+        Actor? actor = await _actorRepository.Read(request.ActorId);
 
         if (actor == null)
         {
-            throw new ActorDoesNotExistException($"Can't find Actor with id {request.Id}");
+            throw new ActorDoesNotExistException($"Can't find Actor with id {request.ActorId}");
         }
         
         actor.ChangeName(new Name(request.Forename, request.MiddleNames, request.Surname));

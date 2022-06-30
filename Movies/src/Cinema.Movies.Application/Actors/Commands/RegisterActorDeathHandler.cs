@@ -21,7 +21,7 @@ public class RegisterActorDeathHandler: IRequestHandler<RegisterActorDeath>
             throw new ActorDoesNotExistException($"Can't find Actor with id {request.ActorId}");
         }
         
-        actor.Died(request.DateOfDeath);
+        actor.RegisterDead(request.DateOfDeath);
 
         await _actorRepository.Update(actor);
         

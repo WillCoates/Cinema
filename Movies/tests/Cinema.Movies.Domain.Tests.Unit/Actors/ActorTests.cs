@@ -53,32 +53,32 @@ public class ActorTests
     }
 
     [Fact]
-    public void Died_ShouldSetDateOfDeath_WhenDateIsProvided()
+    public void RegisterDead_ShouldSetDateOfDeath_WhenDateIsProvided()
     {
         var dateOfDeath = new DateOnly(2022, 05, 01);
 
-        _sut.Died(dateOfDeath);
+        _sut.RegisterDead(dateOfDeath);
 
         _sut.DateOfDeath.Should().Be(dateOfDeath);
     }
 
     [Fact]
-    public void Died_ShouldThrowException_WhenActorAlreadyDead()
+    public void RegisterDead_ShouldThrowException_WhenActorAlreadyDead()
     {
         var dateOfDeath = new DateOnly(2022, 05, 01);
-        _sut.Died(dateOfDeath);
+        _sut.RegisterDead(dateOfDeath);
         
-        var action = () => _sut.Died(dateOfDeath);
+        var action = () => _sut.RegisterDead(dateOfDeath);
 
         action.Should().Throw<ActorAlreadyDeadException>().WithMessage("*Actor already died*");
     }
 
     [Fact]
-    public void Died_ShouldEmitActorDiedEvent_WhenDateIsProvided()
+    public void RegisterDead_ShouldEmitActorDiedEvent_WhenDateIsProvided()
     {
         var dateOfDeath = new DateOnly(2022, 05, 01);
         
-        _sut.Died(dateOfDeath);
+        _sut.RegisterDead(dateOfDeath);
 
         _sut.Events.Should().Contain(new ActorDied(ActorId.Empty, dateOfDeath));
     }
@@ -129,7 +129,7 @@ public class ActorTests
     public void GetMemento_ShouldSetDateOfDeath_WhenActorIsDead()
     {
         var dateOfDeath = new DateOnly(2022, 10, 05);
-        _sut.Died(dateOfDeath);
+        _sut.RegisterDead(dateOfDeath);
         
         var memento = _sut.GetMemento();
 
