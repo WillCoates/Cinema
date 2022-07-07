@@ -11,7 +11,7 @@ public class NameTests
 
         var displayName = name.ToString();
 
-        displayName.Should().Be("John Doe");
+        displayName.Should().Be("John null Doe");
     }
     
     [Fact]
